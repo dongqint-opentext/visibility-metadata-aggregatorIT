@@ -1,0 +1,31 @@
+{
+  "processes": [
+    {
+      "transactionId": "fa384ec4-e381-4fa9-8af2-799730f4201b",
+      "date": "2019-07-12T12:27:05Z",
+      "expires": "2020-05-06T16:43:33.584891800Z",
+      "version": 1562948825047,
+      "steps": [
+        {
+          "name": "Receive",
+          "date": "2019-07-12T12:27:05.047Z",
+          "id": "1f691543-64e4-45c7-ac5c-cb3963227dbe",
+          "timeSpan": 1000,
+          "metadata": {
+            "payloadSizeInBytes": "90879",
+            "protocol": "IFTP",
+            "isAck": "false",
+            "deliveryReceipt": "Outbound - Customer to TP",
+            "remoteHost": "q14iftp2batch.qa.gxsonline.net",
+            "retryCount": "0",
+            "serviceInstanceId": "Node14",
+            "serviceName": "TGMS",
+            "sessionStartTimestamp": "2019-07-12T12:27:05Z",
+            "ilognumber": "6551319999"
+          },
+          "steps": []
+        }
+      ]
+    }
+  ]
+}

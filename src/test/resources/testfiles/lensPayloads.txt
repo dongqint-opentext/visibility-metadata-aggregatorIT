@@ -1,0 +1,14 @@
+{
+  "payloads": [
+    {
+      "transactionId": "fa384ec4-e381-4fa9-8af2-799730f4201b",
+      "name": "input",
+      "description": "INPUT",
+      "size": 90879,
+      "callbackURI": "http://q14dsm.qa.gxsonline.net:7300/TGMSDSMREST/v1/Q14E-201912000000000617760548867",
+      "contentType": "text/plain",
+      "date": "2019-07-12T12:27:05Z",
+      "expireDate": "2020-05-06T16:43:33.587918300Z"
+    }
+  ]
+}

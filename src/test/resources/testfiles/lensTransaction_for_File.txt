@@ -1,0 +1,98 @@
+{
+  "partial": true,
+  "messages": [
+    {
+      "id": "0aaaca51-aa78-48e8-9a71-3ca35a4dbf63",
+      "adminonly": "no",
+      "version": 0,
+      "publishedtime": "2020-02-27T09:51:37Z",
+      "messagedetailsavailable": "true",
+      "msgtype": "NA",
+      "msgtypecode": "NA",
+      "sendermsgid": "0aaaca51-aa78-48e8-9a71-3ca35a4dbf63",
+      "status": "P",
+      "processingtime": 0,
+      "fastatus": "T",
+      "priority": "RT",
+      "productionstatus": "Production",
+      "additionalinformation": [
+        {
+          "value": "0ef01a82-f27b-4e05-9b66-de23271ecc57",
+          "key": "assetId"
+        },
+        {
+          "value": "0",
+          "key": "appFileCount"
+        },
+        {
+          "value": "0",
+          "key": "bypassFileCount"
+        },
+        {
+          "value": "0",
+          "key": "comFileCount"
+        },
+        {
+          "value": "0",
+          "key": "errorCount"
+        },
+        {
+          "value": "0",
+          "key": "inputEdiDocumentCount"
+        },
+        {
+          "value": "0",
+          "key": "inputEdiFileCount"
+        },
+        {
+          "value": "0",
+          "key": "inputInterchangeCount"
+        },
+        {
+          "value": "0",
+          "key": "inputUdfDocumentCount"
+        },
+        {
+          "value": "0",
+          "key": "inputUdfFileCount"
+        },
+        {
+          "value": "0",
+          "key": "outputEdiDocumentCount"
+        },
+        {
+          "value": "0",
+          "key": "outputEdiFileCount"
+        },
+        {
+          "value": "0",
+          "key": "outputInterchangeCount"
+        },
+        {
+          "value": "0",
+          "key": "outputUdfDocumentCount"
+        },
+        {
+          "value": "0",
+          "key": "outputUdfFileCount"
+        },
+        {
+          "value": "0",
+          "key": "rejectedFileCount"
+        },
+        {
+          "value": "000009KPG",
+          "key": "introspectionSessionNumber"
+        },
+        {
+          "value": "TGTS",
+          "key": "introspectionSource"
+        }
+      ],
+      "relatedmsg": [
+        "0aaaca51-aa78-48e8-9a71-3ca35a4dbf63"
+      ],
+      "owners": []
+    }
+  ]
+}

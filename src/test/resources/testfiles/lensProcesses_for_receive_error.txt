@@ -1,0 +1,40 @@
+    {
+      "transactionId": "100",
+      "date": "1970-01-18T18:25:45Z",
+      "expires": "2020-06-01T17:44:40.094127500Z",
+      "version": 1553145248,
+      "steps": [
+        {
+          "name": "Receipt Error",
+          "date": "1970-01-18T18:25:45.248Z",
+          "id": "69937028-453d-4254-97ee-9afd0f5b22f9",
+          "timeSpan": 0,
+          "metadata": {
+            "payloadSizeInBytes": "20",
+            "receiverMailbox": "DEF",
+            "fileName": "abc.123",
+            "isAck": "true",
+            "deliveryReceipt": "Receive recept provided to clinet",
+            "remoteHost": "10.20.30.40",
+            "ackTimeStamp": "1970-01-18T18:25:45Z",
+            "retryCount": "0",
+            "remotePort": "5060",
+            "comfilename": "abc.123",
+            "serviceInstanceId": "string",
+            "errorCode": "string",
+            "lastByteTimestamp": "1970-01-18T18:25:45Z",
+            "serviceName": "BIZ",
+            "externalErrorMessage": "string",
+            "sessionStartTimestamp": "1970-01-18T18:25:45Z",
+            "protocol": "IFTP",
+            "senderMailbox": "ABC",
+            "isPayloadRelated": "true",
+            "internalErrorMessage": "string",
+            "firstByteTimestamp": "1970-01-18T18:25:45Z"
+          },
+          "steps": []
+        }
+      ]
+    }
+  ]
+}

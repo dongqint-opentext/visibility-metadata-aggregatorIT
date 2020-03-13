@@ -1,4 +1,4 @@
-package com.opentext.bn.content;
+package com.opentext.bn.content.cmd.models;
 
 
 public class CmdConstants {

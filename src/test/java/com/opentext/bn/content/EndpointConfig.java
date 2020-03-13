@@ -213,11 +213,20 @@ public class EndpointConfig implements WebMvcConfigurer {
 		};
 	}
 	
-	
 	@Bean
-	public HttpServer lensServer() {
+	public HttpServer lensServer1() {
 		HttpServer server = new HttpServer();
 		server.setPort(9083);
+		server.setAutoStart(true);
+		server.setDefaultTimeout(90000);
+		//server.setEndpointAdapter(dispatchingLensEndpointAdapter(null, null));
+		return server;
+	}
+	
+	@Bean
+	public HttpServer lensServer2() {
+		HttpServer server = new HttpServer();
+		server.setPort(9084);
 		server.setAutoStart(true);
 		//server.setEndpointAdapter(dispatchingLensEndpointAdapter(null, null));
 		return server;
@@ -455,6 +464,58 @@ public class EndpointConfig implements WebMvcConfigurer {
 				io.confluent.kafka.serializers.subject.TopicRecordNameStrategy.class.getName());
 		return CitrusEndpoints.kafka().asynchronous().server("localhost:9092")
 				.topic("visibility.platform.receivecompleted").keyDeserializer(StringDeserializer.class)
+				.valueDeserializer(KafkaAvroDeserializer.class).offsetReset("earliest").consumerGroup("CitrusTest2")
+				.consumerProperties(props).build();
+	}
+	
+	@Bean
+	public KafkaEndpoint receiveErrorKafkaEndpoint() {
+		Map<String, Object> props = new HashMap<>();
+		props.put("schema.registry.url", "http://127.0.0.1:8081");
+		props.put("specific.avro.reader", "true");
+		props.put("value.subject.name.strategy",
+				io.confluent.kafka.serializers.subject.TopicRecordNameStrategy.class.getName());
+		return CitrusEndpoints.kafka().asynchronous().server("localhost:9092")
+				.topic("visibility.platform.receiveerror").keyDeserializer(StringDeserializer.class)
+				.valueDeserializer(KafkaAvroDeserializer.class).offsetReset("earliest").consumerGroup("CitrusTest2")
+				.consumerProperties(props).build();
+	}
+	
+	@Bean
+	public KafkaEndpoint deliverycompletedKafkaEndpoint() {
+		Map<String, Object> props = new HashMap<>();
+		props.put("schema.registry.url", "http://127.0.0.1:8081");
+		props.put("specific.avro.reader", "true");
+		props.put("value.subject.name.strategy",
+				io.confluent.kafka.serializers.subject.TopicRecordNameStrategy.class.getName());
+		return CitrusEndpoints.kafka().asynchronous().server("localhost:9092")
+				.topic("visibility.platform.deliverycompleted").keyDeserializer(StringDeserializer.class)
+				.valueDeserializer(KafkaAvroDeserializer.class).offsetReset("earliest").consumerGroup("CitrusTest2")
+				.consumerProperties(props).build();
+	}
+	
+	@Bean
+	public KafkaEndpoint deliveryErrorKafkaEndpoint() {
+		Map<String, Object> props = new HashMap<>();
+		props.put("schema.registry.url", "http://127.0.0.1:8081");
+		props.put("specific.avro.reader", "true");
+		props.put("value.subject.name.strategy",
+				io.confluent.kafka.serializers.subject.TopicRecordNameStrategy.class.getName());
+		return CitrusEndpoints.kafka().asynchronous().server("localhost:9092")
+				.topic("visibility.platform.deliveryerror").keyDeserializer(StringDeserializer.class)
+				.valueDeserializer(KafkaAvroDeserializer.class).offsetReset("earliest").consumerGroup("CitrusTest2")
+				.consumerProperties(props).build();
+	}
+	
+	@Bean
+	public KafkaEndpoint deliveryReadyForPickupKafkaEndpoint() {
+		Map<String, Object> props = new HashMap<>();
+		props.put("schema.registry.url", "http://127.0.0.1:8081");
+		props.put("specific.avro.reader", "true");
+		props.put("value.subject.name.strategy",
+				io.confluent.kafka.serializers.subject.TopicRecordNameStrategy.class.getName());
+		return CitrusEndpoints.kafka().asynchronous().server("localhost:9092")
+				.topic("visibility.platform.deliveryreadyforpickup").keyDeserializer(StringDeserializer.class)
 				.valueDeserializer(KafkaAvroDeserializer.class).offsetReset("earliest").consumerGroup("CitrusTest2")
 				.consumerProperties(props).build();
 	}

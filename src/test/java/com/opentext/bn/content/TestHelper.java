@@ -10,11 +10,23 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.cliftonlabs.json_simple.JsonArray;
 import com.github.cliftonlabs.json_simple.JsonException;
 import com.github.cliftonlabs.json_simple.JsonObject;
 import com.github.cliftonlabs.json_simple.Jsoner;
 import com.google.common.base.Strings;
+import com.opentext.bn.content.cmd.models.CmdBuLookupResponse;
+import com.opentext.bn.content.lens.models.Message;
+import com.opentext.bn.content.lens.models.Payload;
+import com.opentext.bn.content.lens.models.Payloads;
+import com.opentext.bn.content.lens.models.Process;
+import com.opentext.bn.content.lens.models.Processes;
+import com.opentext.bn.content.lens.models.Token;
+import com.opentext.bn.content.lens.models.Transactions;
+import com.opentext.bn.converters.avro.entity.ReceiveCompletedEvent;
+
+import net.minidev.json.parser.JSONParser;
 
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
@@ -347,7 +359,7 @@ public class TestHelper {
 	}
 	
 	public static String getLensAccessToken() {
-		String fileName = "src/test/resources/testfiles/accessToken.txt";
+		String fileName = "src/test/resources/testfiles/lensToken.txt";
 		try {
 			return new String(Files.readAllBytes(Paths.get(fileName)));
 		} catch (IOException e) {
@@ -356,9 +368,72 @@ public class TestHelper {
 			return "";
 		}		
 	}
+	
+	public static Process getLensProcess(String fileName, int index) {		
+    	Processes processes = null;
+    	
+		try {
+			String processStr = new String(Files.readAllBytes(Paths.get(fileName)));
+           	ObjectMapper mapper = new ObjectMapper();
+           	processes = mapper.readValue(processStr, Processes.class);           	
+        	return processes.getProcesses().get(index);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public static Message getLensTransactionMessage(String fileName, int index) {
+		//String fileName = "src/test/resources/testfiles/lensTransactions.txt";
+		Transactions transactions = null;
+    	
+		try {
+			String transStr = new String(Files.readAllBytes(Paths.get(fileName)));
+           	ObjectMapper mapper = new ObjectMapper();
+           	transactions = mapper.readValue(transStr, Transactions.class);           	
+        	return transactions.getMessages().get(index);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public static Payload getLensPayload(int index) {
+		String fileName = "src/test/resources/testfiles/lensPayloads.txt";
+		Payloads payloads = null;
+    	
+		try {
+			String payloadStr = new String(Files.readAllBytes(Paths.get(fileName)));
+           	ObjectMapper mapper = new ObjectMapper();
+           	payloads = mapper.readValue(payloadStr, Payloads.class);           	
+        	return payloads.getPayloads().get(index);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public static String getLensAuthorizationFromToken() {
+		try {
+			String tokenStr = getLensAccessToken();
+			ObjectMapper mapper = new ObjectMapper();
+			Token lensAccessToken = mapper.readValue(tokenStr, Token.class);
+			String access_token = lensAccessToken.getAccess_token();
+			String token_type = lensAccessToken.getToken_type();
+			//Authorization=bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJwcm4iOiJURzE2LURFViIsInNjb3BlIjoiIiwiaWF0IjoxNTgxMDA3NDE1LCJleHAiOjE1ODEwMTEwMTUsImF1ZCI6Imh0dHBzOi8vbGVucy5saWFpc29uLmNvbS90ZXAiLCJpc3MiOiJodHRwczovL2xlbnMubGlhaXNvbi5jb20ifQ.l2ZKvkWRQpO0MgkzFIG2YbQtToAm0uG__x4vfPzNxVohRHvGJCNyIMTY7oXJFIY-JfhUiMoT3Hb9PC0ig0Ar3MxpnfsUhwfa8Mup0LYMAJow0vdHWJrBzoeMs5AVi7ydFfhXgf7RtXg8HEuzAte_ZWvekb25qq8Bt7MhEVs0k3xH_oA6Dp-5HCyxRSqEHZMIBrGziRH9LzhM9z8gTEghbarGI96-uQ1VwmgAb3leOZMFc4dvlKjA_X5h_gmtKU2I5nKLJqPzkf08oK-IJKEhLCXTvUyVpoG4cyZtJ8NggzYogGbVNkK0ZLUhot_elDwUcYwPoHSl40UQ327hqRVkGw, 
+			return token_type + " " + access_token;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}		
+	}
+	
 
 	public static void main(String[] args) {
-		String params="senderAddress=ADHUBMDCS,senderQualifier=MS,receiverAddress=ADPARTMDCS,receiverQualifier=MS";
-		getCmdBuLookupResponse(params);
+		//getLensTransactionMessage(0);
 	}
 }

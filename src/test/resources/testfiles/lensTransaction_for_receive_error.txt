@@ -1,0 +1,86 @@
+{
+  "partial": true,
+  "messages": [
+    {
+      "id": "100",
+      "adminonly": "no",
+      "version": 1553145248,
+      "publishedtime": "1970-01-18T18:25:45Z",
+      "arrivaltime": "1970-01-18T18:25:45Z",
+      "messagedetailsavailable": "true",
+      "msgtype": "xxx",
+      "msgtypecode": "xxx",
+      "inagent": "IFTP",
+      "sendermsgid": "100",
+      "status": "F",
+      "statusdate": "1970-01-18T18:25:45Z",
+      "processingtime": 0,
+      "fastatus": "N",
+      "priority": "RT",
+      "category": "xxx",
+      "productionstatus": "Test",
+      "informat": "xxx",
+      "insize": 20,
+      "messagelevel": "File",
+      "additionalinformation": [
+        {
+          "value": "e82a5a60-c3ed-418d-8a27-f4a9aaf01cc5",
+          "key": "correlationId"
+        },
+        {
+          "value": "US1",
+          "key": "processingComputeZone"
+        },
+        {
+          "value": "2ce4a12f-731c-4cd3-9ac7-5c3ea92d83b0",
+          "key": "receiverAddress"
+        },
+        {
+          "value": "2ce4a12f-731c-4cd3-9ac7-5c3ea92d83b0",
+          "key": "senderAddress"
+        },
+        {
+          "value": "Solution",
+          "key": "solutionId"
+        },
+        {
+          "value": "string",
+          "key": "errorCode"
+        },
+        {
+          "value": "string",
+          "key": "internalErrorMessage"
+        },
+        {
+          "value": "string",
+          "key": "externalErrorMessage"
+        },
+        {
+          "value": "Receive recept provided to clinet",
+          "key": "deliveryReceipt"
+        },
+        {
+          "value": "abc.123",
+          "key": "filename"
+        },
+        {
+          "value": "1553145248",
+          "key": "LastByteTimestamp"
+        },
+        {
+          "value": "1553145248",
+          "key": "FirstByteTimestamp"
+        },
+        {
+          "value": "abc.123",
+          "key": "com.file.name"
+        }
+      ],
+      "relatedmsg": [
+        "TG16-DEV-c6ce29d6-5566-48f8-b9f2-a5705cee052b",
+        "TG16-DEV-string"
+      ],
+      "owners": []
+    }
+  ]
+}

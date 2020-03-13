@@ -1,0 +1,80 @@
+{
+  "transactionContext": {
+    "correlationId": "e82a5a60-c3ed-418d-8a27-f4a9aaf01cc5",
+    "documentType": "xxx",
+    "eventId": "69937028-453d-4254-97ee-9afd0f5b22f9",
+    "eventTimestamp": 1553145248,
+    "flowId": "766a5206-9b1e-47e3-a98b-0b9e8c121980",
+    "ownershipIndicator": "SENDER",
+    "parentProcessId": "c6ce29d6-5566-48f8-b9f2-a5705cee052b",
+    "priority": "RT",
+    "processId": "766a5206-9b1e-47e3-a98b-0b9e8c121980",
+    "processingCell": "US122",
+    "processingComputeZone": "US1",
+    "processingRegion": "US",
+    "receiverAddress": "2ce4a12f-731c-4cd3-9ac7-5c3ea92d83b0",
+    "relatedTransactions": [
+      {
+        "relationType": "FA",
+        "transactionId": "string"
+      }
+    ],
+    "senderAddress": "2ce4a12f-731c-4cd3-9ac7-5c3ea92d83b0",
+    "serviceInstanceId": "string",
+    "serviceName": "BIZ",
+    "solutionId": "Solution",
+    "taskId": "766a5206-9b1e-47e3-a98b-0b9e8c121980",
+    "testProdIndicator": "Test",
+    "transactionId": "var_transactionId",
+    "transactionTags": [
+      "string"
+    ]
+  },
+  "errorInfo": {
+    "errorCode": "string",
+    "externalErrorMessage": "string",
+    "internalErrorMessage": "string",
+    "isPayloadRelated": true
+  },
+  "payloadRef": {
+    "payloadId": "var_payloadId",
+    "payloadType": "DSM"
+  },
+  "processingStages": [
+    {
+      "contentId": "string",
+      "stageDetails": [
+        {
+          "key": "com.file.name",
+          "value": "abc.123"
+        }
+      ],
+      "stageEndTimestamp": 1553145248,
+      "stageId": "xxx",
+      "stageName": "xxx",
+      "stageStartTimestamp": 1553145248
+    }
+  ],
+  "transferInfo": {
+    "ackTimeStamp": 1553145248,
+    "deliveryReceipt": "Receive recept provided to clinet",
+    "filename": "abc.123",
+    "firstByteTimestamp": 1553145248,
+    "isAck": true,
+    "lastByteTimestamp": 1553145248,
+    "payloadSizeInBytes": 20,
+    "protocol": "IFTP",
+    "receiverMailbox": "DEF",
+    "remoteHost": "10.20.30.40",
+    "remotePort": 5060,
+    "retryCount": 0,
+    "senderMailbox": "ABC",
+    "sessionStartTimestamp": 1553145248,
+    "transferDetails": [
+      {
+        "key": "com.file.name",
+        "value": "abc.123"
+      }
+    ]
+  }
+}

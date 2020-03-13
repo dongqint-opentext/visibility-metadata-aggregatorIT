@@ -1,0 +1,69 @@
+{
+  "partial": true,
+  "messages": [
+    {
+      "id": "fa384ec4-e381-4fa9-8af2-799730f4201b",
+      "adminonly": "no",
+      "version": 1562948825047,
+      "publishedtime": "2019-07-12T12:27:05Z",
+      "arrivaltime": "2019-07-12T12:27:05Z",
+      "messagedetailsavailable": "true",
+      "msgtype": "Invoice",
+      "msgtypecode": "810",
+      "inagent": "IFTP",
+      "sendername": "AD-TGMSHUBCOMP",
+      "senderid": "GC22698817YV",
+      "receivername": "AD-TGMSPARTCOMP1",
+      "receiverid": "GC28464997QM",
+      "sendermsgid": "fa384ec4-e381-4fa9-8af2-799730f4201b",
+      "status": "P",
+      "statusdate": "2019-07-12T12:27:05Z",
+      "processingtime": 1000,
+      "fastatus": "N",
+      "priority": "RT",
+      "category": "810",
+      "productionstatus": "Test",
+      "informat": "810",
+      "insize": 90879,
+      "messagelevel": "File",
+      "additionalinformation": [
+        {
+          "value": "73e00215-bf3a-4a8b-9a79-2204568dddfe",
+          "key": "correlationId"
+        },
+        {
+          "value": "US1",
+          "key": "processingComputeZone"
+        },
+        {
+          "value": "MS:ADPARTMDCS",
+          "key": "receiverAddress"
+        },
+        {
+          "value": "MS:ADHUBMDCS",
+          "key": "senderAddress"
+        },
+        {
+          "value": "Outbound - Customer to TP",
+          "key": "deliveryReceipt"
+        },
+        {
+          "value": "1562948826047",
+          "key": "LastByteTimestamp"
+        },
+        {
+          "value": "1562948825047",
+          "key": "FirstByteTimestamp"
+        },
+        {
+          "value": "6551319999",
+          "key": "ilognumber"
+        }
+      ],
+      "relatedmsg": [
+        "TG16-DEV-36106cd8-ada8-4f50-bf85-fc0ef50f9dd1"
+      ],
+      "owners": []
+    }
+  ]
+}
